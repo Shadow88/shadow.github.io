@@ -445,6 +445,7 @@ mi-content3
         width: 1226px;
         margin: 0px auto;
         clear:both;
+         padding-top: 20px;
     }
     .mi-content3 ul li{
         float: left;
