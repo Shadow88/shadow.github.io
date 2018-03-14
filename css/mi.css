@@ -439,11 +439,12 @@ mi-content2
 mi-content3
  */
     .mi-content3{
-        position: relative;
-        top: 20px;
-        background-color: #dc9632;
-        width: 1200px;
+/*         position: relative;
+        top: 20px; */
+/*         background-color: #dc9632; */
+        width: 1226px;
         margin: 0px auto;
+        clear:both;
     }
     .mi-content3 ul li{
         float: left;
