@@ -1,0 +1,338 @@
+/*头部*/
+body,h1,h3,h2,ul,ol,hgroup,p,figure,img{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+input,button,figure,img,div{
+    box-sizing: border-box;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000;
+}
+.header .center{
+    max-width: 1263px;
+    height: 70px;
+    margin: 0 auto;
+}
+.header .center .logo{
+    /*display: inline-block;*/
+    width:50%;
+    line-height: 70px;
+    height: 70px;
+    float: left;
+    text-align: left;
+    color: #eee;
+    background: url("../img/mi.png")  no-repeat left center;
+    text-indent: 66px;
+}
+.header .center .link{
+
+    float: right;
+    width: 50%;
+    height: 70px;
+    line-height: 70px;
+}
+.header .center .link li{
+    width: 20%;
+    float: left;
+
+    text-align: center;
+}
+.header .center .link li a{
+    display: block;
+    color: #eee;
+    text-decoration: none;
+}
+.header .center .link li a:hover,.header .center .link li.active{
+    background-color: #00afc7;
+}
+
+/*底部*/
+.footer{
+    /*height: 360px;*/
+    background-color: #222;
+        clear: both;
+    color: #eee;
+}
+.footer .top{
+    max-width: 1263px;
+    height: 281px;
+    margin: 0 auto;
+    text-align: center;
+    color: #eee;
+}
+.footer .block{
+    width: 30%;
+    height: 280px;
+    color: #ccc;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.footer .block h2{
+    font-size: 24px;
+    font-weight: normal;
+    padding: 20px 0 0 20px;
+}
+.footer .block hr{
+    width: 90%;
+    border: 1px solid #333;
+}
+.footer .top ul{
+    font-size: 18px;
+    color: #eee;
+    text-indent: 20px;
+    line-height: 2;
+}
+.footer .bottom{
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-top: 1px solid #444;
+    color: #777;
+}
+/**媒体查询**/
+@media (min-width: 1200px) and (max-width: 1279px){
+    .header .center .link li{
+        width: 20%;
+    }
+    .header {
+        width: 100%;
+     margin-bottom: 20px;
+    }
+    .header .center , .search{
+        width: 100%;
+    }
+    .search{
+        padding: 45px 0 0 0;
+    }
+    .tour figure img, .search{
+        width: 95%;
+    }
+    .tour figure {
+        width: 30.8%;
+    }
+    .side-box .figure  figure img{
+        width: 100%;
+    }
+
+    }
+    @media (min-width: 992px) and (max-width:1199px ) {
+        .search{
+            padding: 48px 0 0 0;
+        }
+        .header .center .link li{
+            width: 20%;
+        }
+        .search .center {
+            width: 50%;
+            margin: -10px 0 0 -25%;
+
+        }
+        .tour .center h2{
+            font-size: 40px;
+        }
+        .tour figure img{
+            width: 95%;
+        }
+        .headline group{
+            left: 8%;
+        }
+        /*.container .sidebar{*/
+            /*display: none;*/
+        /*}*/
+        .side-box .figure  figure img{
+            width: 100%;
+        }
+        .commend .tag ul li{
+        width:48%;
+        }
+        .about{
+            padding: 0 10px;
+        }
+}
+@media (min-width: 768px) and (max-width:991px ){
+    .search{
+        padding: 45px 0 0 0;
+    }
+    .header .center .link li{
+        width: 20%;
+    }
+    .header .center .logo{
+        font-size: 18px;
+    }
+    .search .center {
+        height: 50px;
+        width: 60%;
+        margin: -10px 0 0 -30%;
+
+    }
+    .search .button,.search .input{
+        font-size: 20px;
+        height: 45px;
+    }
+    .tour .center h2{
+        font-size: 30px;
+    }
+    .tour figure img{
+        width: 100%;
+    }
+    .tour figure {
+        /*width: 45.2%;*/
+        width: 48%;
+    }
+    .headline group{
+        left: 9%;
+    }
+    .headline  group h2{
+        font-size:36px ;
+    }
+    .headline group h3{
+        font-size:20px ;
+    }
+    /*.container .sidebar{*/
+        /*display: none;*/
+    /*}*/
+    .side-box .figure  figure img{
+        width: 100%;
+    }
+    .about{
+        padding: 0 10px;
+    }
+}
+
+@media (min-width: 480px) and (max-width:767px ) {
+    .search{
+        padding: 45px 0 0 0;
+    }
+    .header .center .logo{
+        display: none;
+    }
+    .header .center .link{
+           width: 100%;
+           line-height: 45px;
+       }
+
+    .header .center .link li{
+        width: 20%;
+    }
+    .header,.header .center .link,.header .center{
+        height: 45px;
+    }
+    .search .center {
+        width: 70%;
+        height: 50px;
+        margin: -10px 0 0 -35%;
+    }
+    .search .button,.search .input{
+        font-size: 18px;
+        height: 45px;
+    }
+    .tour .center h2{
+        font-size: 25px;
+    }
+    .tour figure img{
+        width: 100%;
+    }
+    .tour figure {
+        width: 98.2%;
+    }
+    .headline group{
+        left: 8%;
+    }
+    .headline group h2{
+        font-size:30px ;
+    }
+    .headline group h3{
+        font-size:16px ;
+    }
+    /*.container .sidebar{*/
+        /*display: none;*/
+    /*}*/
+    .side-box .figure  figure img, .commend .tag ul li{
+        width: 100%;
+    }
+    .about{
+        padding: 0 10px;
+    }
+}
+@media  (max-width:479px ){
+    .search{
+        padding: 45px 0 0 0;
+    }
+    .header .center .logo{
+        display: none;
+    }
+    .header .center .link{
+        width: 100%;
+        line-height: 45px;
+    }
+    .header .center .link li{
+        width: 20%;
+    }
+    .header,.header .center .link,.header .center{
+        height: 45px;
+    }
+    .search .center {
+        width: 80%;
+        margin: -10px 0 0 -40%;
+        height: 45px;
+    }
+    .search .button,.search .input{
+        height: 40px;
+        font-size: 14px;
+    }
+    .footer .top ul{
+        line-height: 3;
+        text-indent: 15px;
+        padding-top: 10px;
+    }
+    .footer .top ul li{
+        font-size: 12px;
+    }
+    .footer .block h2{
+        font-size: 12px;
+       padding: 50px 0 0 5px;
+    }
+    .footer .block{
+        height: 200px;
+    }
+    .tour .center h2{
+        font-size: 20px;
+    }
+    .tour figure {
+        width: 99.8%;
+    }
+    .tour figure img{
+        width: 50%;
+    }
+
+
+    .headline group h2{
+        font-size:14px ;
+    }
+    .headline group h3{
+        font-size:14px ;
+    }
+    .container .sidebar{
+        display: none;
+    }
+    .footer .bottom {
+        font-size: 14px;
+    }
+    .about{
+        padding: 0 10px;
+    }
+}

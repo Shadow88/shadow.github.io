@@ -1,0 +1,424 @@
+.headline{
+    max-width: 1260px;
+    margin:0 auto;
+    background: url("../img/xmad.jpg") no-repeat  center;
+
+}
+/*.headline .center{*/
+   /*width: 1263px;*/
+    /*height: 460px;*/
+    /*margin: 0 auto;*/
+/*}*/
+.headline group{
+    position: absolute;
+    top: 40%;
+    left: 28%;
+}
+.headline h2{
+    font-size: 26px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-indent: 20px;
+}
+.headline h3{
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-indent: 20px;
+}
+/*slide*/
+.container{
+   max-width: 1263px;
+    margin: 30px auto;
+}
+.container .sidebar{
+    width: 28%;
+    float: right;
+}
+
+.container .side-box{
+    border: 1px solid #eee;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+.container .side-box h2{
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    text-align: left;
+    background-color: #fafafa;
+}
+.container .tag{
+    padding: 10px 0;
+}
+.container .tag li{
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    margin: 2px 0;
+    background-color: #eee;
+    color: #666;
+
+}
+.container .tag li a{
+    display: block;
+    text-decoration: none;
+}
+.container .tag a:hover{
+    background-color: #458b00;
+    color: #fff;
+}
+.container .figure{
+    padding: 1px;
+}
+.container   figure{
+    display: inline-block;
+    color: #333333;
+    padding: 4px;
+}
+.container   figure img{
+    width: 155px;
+}
+.container .box{
+    padding: 10px 0;
+}
+.container .box a{
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin: 2px 0;
+    background-color: #eee;
+    color: #666;
+    text-decoration: none;
+}
+.container .box a:hover{
+    background-color: #458b00;
+    color: #fff;
+}
+
+.container .list{
+    width: 71%;
+    float: left;
+}
+.container .in-for{
+    background-color: #eee;
+    line-height: 45px;
+    height: 45px;
+    margin: 0 0 10px 0;
+}
+.container .in-for .left{
+    display: inline-block;
+    float: left;
+}
+.container .in-for li{
+    display: inline-block;
+    width: 150px;
+    height: 43px;
+    line-height: 43px;
+
+}
+.container .in-for .left li:nth-child(1){
+    background-color: #fff;
+    border-top: 2px solid #45bb00;
+    position: relative;
+    left: 1px;
+}
+.container .in-for .left li a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: #666;
+}
+.container .in-for .right{
+    float: right;
+    display: inline-block;
+    padding: 0 20px 0 0;
+}
+.container .in-for .right li{
+    width: 60px;
+    height: 45px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+}
+.container .in-for .right li a{
+    padding: 3px 8px;
+    color: #666;
+}
+.container .in-for .right a.selected,.container .in-for .right li a:hover{
+    background-color: #45bb00;
+    color: #fff;
+}
+.tour{
+    position: relative;
+    width: 900px;
+    padding: 0;
+}
+.tour img{
+    float: left;
+}
+.tour figcaption{
+    width: 720px;
+    height: 230px;
+    float: right;
+}
+.tour  group{
+    width: 300px;
+}
+.tour h2{
+    font-size: 24px;
+    color: #333;
+    padding: 0px 0 10px 25px;
+}
+.tour h3{
+    font-size: 16px;
+    color: #666;
+    padding: 0px 0 0px 25px;
+}
+.tour ol{
+    padding: 0px 0 0px 25px;
+    line-height: 1.5;
+}
+.tour ol mark{
+    background-color: #fff;
+    border: 1px solid #458b00;
+    border-radius:4px ;
+    padding: 0 5px;
+    color: #458b00;
+    line-height: 2;
+}
+.tour .buy{
+    position: absolute;
+    right: 30px;
+    top: 55px;
+
+}
+.tour s{
+    font-size: 16px;
+    color: #999;
+}
+.tour .price{
+    font-size: 20px;
+    color: #f60;
+}
+.tour strong{
+    font-size: 36px;
+}
+.tour .reserve{
+    margin: 10px 0 0 0 ;
+}
+.tour .reserve a{
+    display: inline-block;
+    width: 152px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: #F60;
+    font-size: 20px;
+    text-align: center;
+}
+.tour .type{
+
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-bottom-right-radius: 4px;
+    background-color: #59b200;
+    font-size: 14px;
+    letter-spacing: 1px;
+    top: 0px;
+    left: 4px;
+    position: absolute;
+}
+.tour .disc{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fd7117;
+    border: 1px solid #fd6b0d;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+
+}
+.tour .disc span{
+    width: 50px;
+    height: 50px;
+    display: block;
+    transform: rotate(-45deg);
+}
+
+.tour footer{
+    width: 528px;
+    height: 30px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-indent: 25px;
+    background-color: #fafafa;
+}
+.tour .more,.scenery .more{
+    text-align: center;
+    border: 2px solid #ccc;
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+/*活动页面*/
+.ticket{
+    color: #666;
+    font-size: 20px;
+}
+.ticket h2,.scenery h2,.about h2{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #999;
+    padding: 0px 0 15px 0;
+    font-weight: normal;
+
+}
+.ticket .type{
+    margin: 20px 0 10px 0;
+}
+.ticket .type mark{
+    color: #fff;
+    padding: 5px 8px;
+    background-color: #59b200;
+    border-radius: 4px;
+    margin: 0 10px 0 16px;
+
+}
+.ticket .form{
+    font-size: 20px;
+}
+.ticket .form  input{
+    width: 250px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #000;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 0 16px;
+}
+.ticket .left{
+    width: 30%;
+    display: inline-block;
+}
+.ticket .right{
+    display: inline-block;
+    width: 30%;
+}
+.ticket .button{
+    display: inline-block;
+    width: 9%;
+}
+.ticket .button .submit{
+    width: 90px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 4px;
+    background-color: #F60;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: -28px;
+}
+.ticket .form p{
+    line-height: 3;
+}
+.ticket  .new{
+    margin: 20px 0 0 0 ;
+
+}
+.ticket  .new ul{
+    margin: 20px 0 0 0 ;
+}
+.ticket  .new ul li{
+    display: inline-block;
+    padding: 5px 10px;
+}
+.ticket  .new ul li:first-child{
+  padding-left: 0;
+}
+.ticket  .new ul li:nth-child(2){
+    background-color: #458b00;
+    color: #fff;
+    border-radius: 4px;
+}
+.ticket .new table{
+    margin: 20px 0 0 0 ;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+.ticket table tr{
+    padding: 5px 5px;
+}
+.ticket table th{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+.ticket table td{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+.ticket table tr:nth-child(2n){
+    background-color: #fafafa;
+}
+.ticket table tr:hover{
+    background-color: #eee;
+}
+.ticket table  .price{
+    color: #f60;
+}
+.ticket table .reserve{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    background-color: #F60;
+    font-size: 16px;
+    text-align: center;
+    /*position: relative;*/
+    /*top: -28px;*/
+}
+/*旅游风景**/
+.scenery figure {
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    padding: 4px;
+    border-radius: 4px;
+    width: 32.6%;
+    margin: 15px 0px 15px 25px;
+    text-align: center;
+}
+.scenery figure img{
+    width: 380px;
+}
+/*关于我们*/
+.about p{
+    line-height: 2;
+    margin: 20px 0;
+}
+.about address{
+    line-height: 1.5;
+    margin: 20px 0;
+}
