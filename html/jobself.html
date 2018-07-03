@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body{
+            background: no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -webkit-font-smoothing: subpixel-antialiased;
+            background-size: cover;
+        }
+
+        .container {
+            position: relative;
+            padding-bottom: 80px;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        /* ===============
+        End of Style for Body
+        ===================*/
+
+
+        /* ===============
+        Style for Menu Bar
+        ===================*/
+        .main-menu{
+            width:15%;
+            top:0;
+            position: absolute;
+            left:5%;
+            padding-right:10px;
+            margin-top: 36px;
+            -webkit-transition: all 0.6s ease-in-out;
+            transition: all 0.6s ease-in-out;
+            display: none;
+        }
+        @media (min-width:992px) {
+            .main-menu {
+                display: block;
+            }
+        }
+        @media (min-width: 1400px) {
+            .main-menu {
+                margin-top: 186px;
+            }
+        }
+        .main-menu-pgactive {
+            left: 0%;
+        }
+
+        .main-menu-list{
+            margin:0;
+            padding:0;
+        }
+        .main-menu-list li{
+            margin-bottom: 5px;
+            padding: 0;
+            margin: 5px;
+            list-style: none;
+        }
+        .main-menu-list a{
+            display:block;
+            background: #08aeac;
+            color: #ffffff;
+            padding: 7px;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .main-menu-list a:active, .main-menu-list a:visited{
+            text-decoration: none;
+        }
+        .main-menu-list a:before{
+            content: '';
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background: #021533;
+            z-index: -1;
+        }
+
+        .main-menu-list a:hover{
+            color: red;
+            border: 0px solid transparent!important;
+            text-decoration: none;
+            padding-left: 30px;
+        }
+        .main-menu-list a:hover:before{
+            width:100%;
+        }
+
+        .main-menu-list a.menuActive{
+            text-decoration: none;
+            background: #021533;
+            padding-left: 15px;
+        }
+
+        /* ===============
+        End of Style for Menu Bar
+        ===================*/
+
+        /* ===============
+        Style for section- vcard-body
+        ===================*/
+        .vcard-body{
+            width: 99%;
+            margin: 0 auto;
+            margin-top:20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-top: 6px solid #111;
+            background: #f4f4f4;
+            overflow-y: scroll;
+            -webkit-transition: all 0.6s ease-in-out;
+            -moz-transition: all 0.6s ease-in-out;
+            transition: all 0.6s ease-in-out;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -webkit-box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.46);
+            -moz-box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.46);
+            box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.46);
+            border-bottom: 15px solid #f4f4f4;
+        }
+        @media (min-width:992px) {
+            .container {
+                min-height: 680px;
+            }
+        }
+
+        @media (min-width:992px) {
+            .vcard-body {
+                position: absolute;
+                margin-top: 30px;
+                left: 20%;
+                height: 570px;
+                width: 35%;
+                padding: 45px;
+                padding-bottom: 20px;
+            }
+        }
+        @media (min-width: 1400px) {
+            .vcard-body {
+                margin-top: 180px;
+            }
+        }
+        .vcard-body-pgactive {
+            left: 15%;
+        }
+
+        /* ===============
+        End of Style for section- vcard-body
+        ===================*/
+
+        /* ===============
+        Style for section-Home
+        ===================*/
+        .section-home {
+            z-index: 88;
+            opacity: 1;
+            overflow-y: auto;
+        }
+
+        .vcard-profile-photo {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
+            /*margin-bottom: 20px;*/
+            position: relative;
+        }
+        .vcard-profile-photo img {
+            width: 100%;
+            border-radius: 100%;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border: 5px solid #ddd;
+            -webkit-transition: all 0.6s ease-in-out;
+            -moz-transition: all 0.6s ease-in-out;
+            top:0;
+            left:0;
+            position: absolute;
+            opacity: 0;
+        }
+        .profileActive {
+            opacity: 1!important;
+        }
+        .color1 {
+            color: #08aeac;
+        }
+        .vcard-description {
+            text-align: center;
+        }
+        .profile-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+            font-size: 30px;
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+            color: #021533;
+        }
+        .profile-subtitle {
+            text-align: center;
+            margin-top: 0;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .hr1{
+            height: 1px;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .description-text {
+            padding: 10px;
+            /*padding-top: 5px;*/
+            margin-bottom: 1px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .description-text p {
+            font-size: 13px;
+        }
+        .description-footer-item {
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            padding: 2px;
+            margin-bottom: 15px;
+            background-color: #08aeac;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .description-footer-item p{
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+
+
+        @media (min-width:992px) {
+            /*.section-page-single {*/
+                /*left: 55%;*/
+                /*transform: translateY(-200px);*/
+                /*-moz-transform: translateY(-200px);*/
+                /*-webkit-transform: translateY(-200px);*/
+                /*visibility: hidden;*/
+                /*padding: 20px;*/
+                /*padding-top: 0px;*/
+            /*}*/
+        }
+        @media (min-width:992px) {
+            .section-page {
+                z-index: 11;
+                opacity: 0;
+            }
+        }
+        .section-page-active {
+            opacity: 1;
+            z-index: 22;
+            left: 56%;
+            visibility: visible;
+            transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+        }
+        @media (min-width:992px) {
+            .section-page-active {
+                margin-top: 30px;
+                margin-left: 10px;
+            }
+        }
+        @media (min-width: 1400px) {
+            .section-page-active {
+                margin-top: 180px;
+            }
+        }
+        @media (min-width:992px) {
+            .page-mask {
+                position: absolute;
+                top: 605px;
+                left: 30%;
+                display: block;
+                width: 40%;
+                height: 20px;
+                background: #333;
+                z-index: 77;
+                opacity: 0;
+                -webkit-transition: all 0.6s ease-in-out;
+                -moz-transition: all 0.6s ease-in-out;
+                transition: all 0.6s ease-in-out;
+            }
+        }
+        /*.page-mask-active {*/
+            /*left: 55%;*/
+            /*opacity: 1;*/
+            /*margin-left: 10px;*/
+        /*}*/
+
+        /* ===============
+        End of Style for section-Home
+        ===================*/
+
+        /* ===============
+        Style for Footer
+        ===================*/
+        .footer-icons {
+            text-align: center;
+            font-size: 28px;
+        }
+        .footer-icons a {
+            color: #ffffff;
+            display: inline-block;
+            width:30px;
+            height:30px;
+            text-align:center;
+            background:#333333;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            font-size: 14px;
+            line-height: 30px;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+        }
+        .footer-icons a:hover{
+            color: #ffffff;
+            background: #08aeac;
+        }
+
+        /* ===============
+        End of Style for Footer
+        ===================*/
+
+        /* ===============
+        Style for Resume Page
+        ===================*/
+        .section-education {
+            margin-bottom: 40px;
+        }
+        .resume-buttons {
+            margin-bottom: 30px;
+        }
+        .page-buttons {
+            margin-top: -10px;
+        }
+        .page-footer {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        /* Content Styling */
+        .section-title {
+            color:#181031;
+            text-transform: uppercase;
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 29px;
+            margin-top:10px;
+            padding-bottom:10px;
+            border-bottom: 1px solid #181031;
+            margin-bottom: 20px;
+        }
+
+        .section-title2 {
+            font-weight: bold;
+            color: #009993;
+            font-size: 27px;
+            line-height: 14px;
+            letter-spacing: -1px;
+            padding-bottom: 10px;
+            padding-left: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        /* Testimonials */
+
+        .testimonials {
+            text-align: center;
+            font-size: 20px;
+        }
+        .testimonial-item {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .testimonial-item {
+                padding: 20px;
+                /*padding-top: 10px;*/
+                /*padding-bottom: 10px;*/
+            }
+        }
+        .testimonial-author {
+            margin-top: 30px;
+        }
+
+        .testimonial-picture{
+            width: 110px;
+            height: 110px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .testimonial-picture img{
+            width: 100%;
+            border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border: 6px solid #ddd;
+        }
+
+
+        .testimonial-content {
+            font-size: 12px;
+            background: #08aeac;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            width: 100%;
+            position: relative;
+        }
+        .testimonial-content p {
+            font-size: 13px;
+            line-height: 18px;
+        }
+        .testimonial-content:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            margin-left: -5px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            z-index: 888;
+            background: #08aeac;
+        }
+
+        .author-name {
+            font-size: 18px;
+            margin-bottom: 0;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .author-firm {
+            font-size: 11px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: lighter;
+        }
+
+
+
+        /* ===============
+        End of Style for Resume Page
+        ===================*/
+
+        /* ===============
+        Style for Buttons
+        ===================*/
+
+        .btn {
+            font-weight: bold;
+            color: #ffffff;
+            background: #009993;
+            border-radius: 0;
+            font-size: 12px;
+            padding: 5px 10px;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 2px;
+        }
+        .btn:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .btn-default {
+            display: inline-block;
+            padding: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #008c8a !important;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 0;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            border: 0px solid transparent!important;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-default:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background: #021533;
+            z-index: -1;
+        }
+        .btn-default:hover {
+            color: #ffffff;
+            border: 0px solid transparent!important;
+        }
+        .btn-default:hover:before {
+            width: 100%;
+        }
+        .btn-default2 {
+            font-size: 10px;
+            background: #021533;
+            font-weight: lighter;
+        }
+        .btn-default3 {
+            background: #d9212a;
+            color: #ffffff;
+            border: 0;
+            text-transform: uppercase;
+        }
+        .btn-default3:hover {
+            background: #009d9b;
+            color: #ffffff;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* ===============
+        End of Style for Buttons
+        ===================*/
+
+        /* ===============
+        Style for Content
+        ===================*/
+
+        .resume-item {
+            padding: 10px;
+            border: 4px double #ccc;
+            margin-bottom: 20px;
+        }
+        .resume-item-title {
+            font-weight: bold;
+            color: #021533;
+            color: #333;
+            padding-left: 0;
+            margin-left: 0;
+            font-size: 18px;
+            line-height: 20px;
+            margin: 0;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .resume-item-text {
+            line-height: 15px;
+            font-style: italic;
+            color: #555;
+            font-size: 15px;
+            margin-top: 15px;
+            padding-bottom: 5px;
+        }
+        .grad-date {
+            line-height: 15px;
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .job {
+            line-height: 15px;
+            font-style: italic;
+            color: #555;
+            font-size: 14px;
+            margin-top: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        .job-date {
+            line-height: 15px;
+            font-style: italic;
+            font-size: 12px;
+        }
+        .resume-item-description p{
+            font-size: 14px;
+        }
+        .section-item-title2 {
+            font-weight: bold;
+            color: #021533;
+            color: #333;
+            padding-left: 0;
+            margin-left: 0;
+            line-height: 22px;
+            margin: 0;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            border-bottom: 1px dotted #021533;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+        /* ===============
+        End of Style for Content
+        ===================*/
+        /* ===============
+        Style for Skills page
+        ===================*/
+        .skill-list {
+            padding-left: 0;
+            margin-left: 0;
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        .progress {
+            position: relative;
+            height: 35px;
+            margin-bottom: 10px;
+        }
+        .progress > .progress-type {
+            position: absolute;
+            left: 0px;
+            font-size: 13px;
+            padding:4px 9px;
+            color: #ffffff;
+            background-color: rgba(25, 25, 25, 0.2);
+        }
+        .progress > .progress-completed {
+            position: absolute;
+            right: 0px;
+            font-weight: 800;
+            padding: 3px 10px 5px;
+            color: grey;
+            font-size: 15px;
+        }
+        .progress-bar {
+            background: #08aeac;
+            width: 20%;
+        }
+        .progress-bar-2 {
+            background: #111175;
+        }
+        .progress-bar-3 {
+            background: #69057A;
+        }
+
+        /* ===============
+        End of Style for Skills page
+        ===================*/
+
+        /* ===============
+        Style for Portfolio page
+        ===================*/
+        .project-item {
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+            opacity: 1;
+            -webkit-transition: all 0.8s ease-in-out;
+            -moz-transition: all 0.8s ease-in-out;
+            transition: all 0.8s ease-in-out;
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+        }
+        .project-item a {
+            /*cursor: url('img/da_image3.jpg');*/
+            border-radius: 6px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+        }
+        .project-thumbnail {
+            display: block;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            height: 250px;
+            text-align: center;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .project-thumbnail:hover {
+            color: #ffffff;
+        }
+        .project-thumbnail:hover .project-description-wrapper {
+            opacity: 1;
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+        }
+        .project-thumbnail:hover .project-title,
+        .project-thumbnail:hover span.see-more {
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+        }
+        .project-description-wrapper {
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            color: #ffffff;
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .project-description {
+            position: absolute;
+            top: 50%;
+            margin-top: -55px;
+            width: 100%;
+        }
+        .project-title {
+            text-transform: uppercase;
+            font-size: 20px;
+            transform: translateY(10px);
+            -webkit-transform: translateY(10px);
+            -moz-transform: translateY(10px);
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        .project-title:after {
+            content: '';
+            display: block;
+            height: 1px;
+            border-bottom: 1px solid #ffffff;
+            width: 50%;
+            margin: 0 auto;
+            opacity: 0.5;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .project-thumbnail {
+            display: block;
+            color: #ffffff;
+            position: relative;
+        }
+        span.see-more {
+            font-style: italic;
+            text-transform: lowercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(10px);
+            -webkit-transform: translateY(10px);
+            -moz-transform: translateY(10px);
+        }
+
+        /* ===============
+        End of Style for Portfolio page
+        ===================*/
+
+        /* ===============
+        Style for Contact page
+        ===================*/
+        .form-element {
+            margin-bottom: 8px;
+        }
+
+        .form-control{
+            border-radius: 0;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+            height: 50px;
+        }
+
+        .form-send {
+            width: 100%;
+        }
+        .form-send:hover{
+            background: #d9212a !important;
+        }
+        ::-webkit-input-placeholder {
+            font-style: italic;
+            color: #999999 !important;
+        }
+        :-moz-placeholder {
+            font-style: italic;
+            color: #999999 !important;
+        }
+        ::-moz-placeholder {
+            font-style: italic;
+            color: #999999 !important;
+        }
+        :-ms-input-placeholder {
+            font-style: italic;
+            color: #999999 !important;
+        }
+
+        .contact-email {
+            font-size:13px;
+            margin-bottom: 10px;
+            margin-top: 25px;
+            font-weight: bold;
+            color: #099993;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #099993;
+        }
+        .contact-info p{
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: -1px;
+        }
+
+        .contact-map{
+            position:relative;
+            margin-bottom:20px;
+        }
+
+        /* ===============
+        End of Style for Contact page
+        ===================*/
+        #job {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            -webkit-animation: marquee 15s linear infinite;
+            animation: marquee 15s linear infinite;
+            font-size: 20px;
+            color: #099993;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(-175px);
+            }
+            100% {
+                transform: translateX(360px);
+            }
+        }
+    </style>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--Main Page-->
+<section id="body" class="">
+    <!--Main Container-->
+    <div class="container">
+        <!--Menu Bar-->
+        <div class="main-menu" id="main-menu">
+            <ul class="main-menu-list">
+                <li>
+                    <a href="#page-resume" class="link-home">主页</a>
+                </li>
+                <li>
+                    <a href="#page-resume" class="link-page">简历</a>
+                </li>
+                <li>
+                    <a href="#page-skills" class= "link-page">技能</a>
+                </li>
+                <li>
+                    <a href="#page-portfolio" class= "link-page">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="#page-contact" class= "link-page">联系方式</a>
+                </li>
+            </ul>
+        </div>
+        <!--End of Menu Bar-->
+        <!-- 主页-->
+        <div class="vcard-body section-home" id="section-home">
+            <!--vcard-profile photo-->
+            <div class= "vcard-profile-photo">
+                <!--    <img src= "/img/untitled.png" id="profile-pic2" alt= ""/>-->
+                <img src="img/untitled.png" id="profile-pic1" class= "profileActive" alt= ""/>
+            </div>
+            <!--End of vcard-profile photo-->
+
+            <!--vcard-Description-->
+            <div class= "vcard-description">
+                <!--vcard-Description-Profile-->
+                <h1 class= "profile-title"><span class="color1">hi,Welcome</span></h1>
+                <hr class="hr1">
+                <!--End of vcard-Description-Profile-->
+                <!--vcard-Description-Text-->
+                <div class= "description-text">
+                    <p><span class="color1">我的简历!</span></p>
+                    <p id="job">找一份前端攻城狮的工作</p>
+                </div>
+                <!--End of vcard-Description-Text-->
+                <!--vcard-Description-footer-->
+                <div class= "description-footer">
+                    <!--Item-->
+                    <div class= "description-footer-item">
+                        <p class="active">email : 596673467@qq.com</p>
+                    </div>
+                    <!--End of Item-->
+                </div>
+                <!--End of vcard-Description-footer-->
+            </div>
+            <!--End of vcard-Description-->
+            <!--Footer-->
+        <!--    <div class= "vcard-footer">
+                &lt;!&ndash;social icons&ndash;&gt;
+                <div class="footer-icons">
+                    <a href="#" target="_blank" ><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+
+                </div>
+                &lt;!&ndash;End of social icons&ndash;&gt;
+            </div>-->
+            <!--End of Footer-->
+        </div>
+        <!-- End of Profile card -->
+        <!-- Extended View-->
+        <!--Page: Resume-->
+        <div class="vcard-body section-page" id="page-resume">
+            <!--Section: Education-->
+            <div class="section-education">
+                <!--section title-->
+                <h2 class="section-title"> 简历</h2>
+                <!--end of section title-->
+
+                <!--Buttons-->
+                <div class="resume-buttons page-buttons">
+                    <!--Download CV button-->
+                    <a  href="https://premnathramanathan.000webhostapp.com/Resume/PremnathRamanathan_resume_new.docx" class="btn btn-default btn-default2" download><i class="fa fa-download"></i>下载我的简历</a>
+                    <!--/Download CV button-->
+                    <!--Get in Touch Button-->
+<!--
+                  <a href="#page-contact" class="btn btn-default btn-default2 link-page"><i class="fa fa-download"></i>&nbsp; Get in touch</a>
+-->
+                    <!--/Get in Touch Button-->
+                </div>
+
+            </div>
+            <!--Section: 项目经验-->
+            <div class="section-education">
+                <!--Work Header-->
+                <h2 class="section-title2"><i class="fa fa-flag"></i>项目经验</h2>
+                <!-- /Work Header-->
+                <!-- Resume Item-->
+                <div class="resume-item">
+                    <!--workplace-title-->
+                    <h3 class="resume-item-title" >小米商城</h3>
+                    <!--/item-title-->
+                    <!--item-text-->
+                    <h4 class="job" style="color: #08aeac">日期:&nbsp<span class="job-date">2018-03-01 --> 2018-07-01</span></h4>
+                    <!--/item-text-->
+                    <!--item-description-->
+                    <div class="resume-item-description">
+                        <p><br>
+                            一.导航栏：<br>
+                            1.<span style="color: #08aeac;font-size: 20px">简历</span>模块使用css3动画进行平移<br>
+                            1-1.可以进行简历的下载<br>
+                             1-2. 个人的一系列信息的动画切换：简历，技能，联系方式等<br>
+                            2. <span style="color: #08aeac;font-size: 20px">响应式</span>模块， 五个页面：<br>
+                             2-1头部固定布局和底部样式抽出来实现分离<br>
+                             2-2 全网页使用百分比设置宽高，而使用媒体查询来适应各种不同的屏幕尺寸<br>
+                             2-3 设置href:target在同一个页面切换<br>
+                            3. <span style="color: #08aeac;font-size: 20px">瀑布流</span>模块<br>
+                            3-1：头部固定布局：使用scroll滑动到一定的距离显示和隐藏，广告轮播使用是缓动动画和定时器的结合实现无限轮播</br>
+                            3-2：中间内容布局：使用的tab卡片切换和图片瀑布流可以无限加载</br>
+                            4. <span style="color: #08aeac;font-size: 20px">固定布局</span>模块<br>
+                            4-1 导航栏鼠标滚动到一定的距离的时候固定在顶部，点击相应模块可以滚动到对应位置<br>
+                            4-2 play movie 点击可以播放视频，绝对布局，实现播放前后图片预览<br>
+                            4-3 下面内容布局使用不定宽高布局<br>
+                            5. <span style="color: #08aeac;font-size: 20px">动画</span>模块<br>
+                            5-1 小车实现自动的按照一条路线驾驶，使用简单的canvas 2D实现,使用class 类实现 车子跑动的距离和路线的无限延长更新<br>
+                            二.中间内容：<br>
+                            1.典型的轮播图和左边栏显示和隐藏<br>
+                            2.广告部分手风琴效果<br>
+                            3.后面内容为九宫格布局<br>
+
+                        </p>
+
+                    </div>
+                    <!--/item-description-->
+                </div>
+                <!-- /Resume Item-->
+                <!-- Resume Item-->
+                <div class="resume-item">
+                    <!--workplace-title-->
+                    <h3 class="resume-item-title">个人博客</h3>
+                    <!--/item-title-->
+                    <!--item-text-->
+                    <h4 class="job">NodeJs - <span class="job-date">2018-03-01 --> 2018-07-01</span></h4>
+                    <!--/item-text-->
+                    <!--item-description-->
+                    <div class="resume-item-description">
+                        <p>前后台交互<br>
+                            个人博客：前端实现了登录注册，导航，分页加载数据，后台实现，用户管理，分类管理，内容管理模块<br>
+                            1、通过generator搭建一个web应用框架和页面使用bootstrap；<br>
+                            2、使用mongodb保存持久化保存数据；<br>
+                            3、使用node模块：mongoose设计维护和操作mongodb数据库和数据，实现了对数据的结   构化存储和CURD（增、删、改、查）操作；<br>
+                            4、使用EJS实现前后端分离<br>
+                            5、其他各种 express 中间件技术：<br>
+                            a）static中间件实现静态资源托管；<br>
+                            b）cookies中间件实现cookie的操作，完成用户登录状态、权限信息验证功能；<br>
+                            c）body-parser中间件实现对post数据进行解析；<br>
+                            6、自定义中间件实现统一数据验证和处理；<br>
+                            7、功能模块分层开发；<br>
+                            8、ajax的api接口设计开发和应用；
+                        </p><br>
+                    </div>
+                    <!--/item-description-->
+                </div>
+            </div>
+            <!--工作经验-->
+            <h2 class="section-title2"><i class="fa fa-commenting"></i>工作经验</h2>
+            <!--/testimonial header-->
+            <div class="testimonials">
+                <!--Testimonial slides-->
+                <div class="testimonial-slides" id="testimonial-carousal">
+                    <!--item-->
+                    <div class="testimonial-item">
+                        <!--Testimonial-content-->
+                        <div class="testimonial-content">
+                            <p>"1、独立完成项目测试，制定测试计划，设计测试方案，建立并优化测试过程
+                                2、参与日常需求分析，跟踪缺陷并报告测试结果
+                                3、与开发团队一起解决软件缺陷和问题
+                                4.使用LoadRunner进行并发，压力等性能测试
+                                5.使用wvs和基本的脚本进行安全测试"</p>
+                        </div>
+                        <!--/Testimonial-content-->
+                        <!--Testimonial-Author-->
+                        <div class="testimonial-author">
+                            <!--Picture-->
+                            <div class="testimonial-picture">
+                                <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAdCAAAAJGMwOTEwNDE0LWZjYTItNDA1MC1hMGE1LWFhN2MwZWMzYTJmYQ.jpg" alt=""/>
+                            </div>
+                        </div>
+                        <!--教育程度-->
+                        <h2 class="section-title2"><i class="fa fa-university"></i>教育程度</h2>
+                        <div class="resume-item">
+                            <!--item-title-->
+                            <h3 class="resume-item-title">大学搬砖的大砖</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--/Testimonial slides-->
+
+            </div>
+
+        </div>
+        <!--End of Page Resume-->
+        <!--Page: Skills-->
+        <div class="vcard-body section-page" id="page-skills">
+            <div class="section-skills">
+                <!--skills-title-->
+                <h2 class="section-title">Skills</h2>
+                <!--/skills-title-->
+                <!-- skills-subtitle-->
+                <h3 class="section-item-title2"><i class="fa fa-users"></i>技能</h3>
+                <!-- /skills-subtitle-->
+                <!-- skill list-->
+                <ul class="skill-list">
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-percent="80%" style="width: 80%;">
+                                <span class="sr-only">80% Complete</span>
+                            </div>
+                            <span class="progress-type">Communication</span>
+                            <span class="progress-completed">7.0 / 10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-2" role="progressbar" data-percent="75%" style="width: 75%;">
+                                <span class="sr-only">75% Complete</span>
+                            </div>
+                            <span class="progress-type">Leadership</span>
+                            <span class="progress-completed">3.5 / 10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-3" role="progressbar" data-percent="90%" style="width: 90%;">
+                                <span class="sr-only">90% Complete</span>
+                            </div>
+                            <span class="progress-type">Confidence</span>
+                            <span class="progress-completed">9.5 / 10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                </ul>
+                <!-- /skill list-->
+
+                <!-- skills-subtitle-->
+                <h3 class="section-item-title2"><i class="fa fa-code"></i>&nbsp;&nbsp; Coding Skills</h3>
+                <!-- /skills-subtitle-->
+                <!-- Skils List -->
+                <ul class="skill-list">
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar" data-percent="80%" role="progressbar" style="width: 80%;">
+                                <span class="sr-only">80% Complete</span>
+                            </div>
+                            <span class="progress-type">HTML5 / CSS3 / Javascript</span>
+                            <span class="progress-completed">8.0 / 10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-2" data-percent="70%" role="progressbar" style="width: 70%;">
+                                <span class="sr-only">70% Complete</span>
+                            </div>
+                            <span class="progress-type">Mongodb/oracle</span>
+                            <span class="progress-completed">6.0 / 10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                    <!-- item-list -->
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-3" data-percent="60%" role="progressbar" style="width: 55%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                            <span class="progress-type">node/ejs/bootstrap </span>
+                            <span class="progress-completed">7.0 /10</span>
+                        </div>
+                    </li>
+                    <!-- /item list -->
+                </ul>
+
+            </div>
+        </div>
+        <!--/Page: Skills-->
+        <!--Page: PortFolio-->
+        <div class="vcard-body section-page" id="page-portfolio">
+            <!--title-->
+            <h2 class="section-title">Portfolio</h2>
+            <!--/title-->
+            <!-- Project List-->
+            <div class="projects-list">
+                <!-- Project Item-->
+                <div class="project-item">
+                    <!-- Thumbnail Background-->
+                    <a href="https://premnathramanathan.000webhostapp.com/Content/PW_app_arch.jpg" class="project-thumbnail nivobox" data-lightbox-gallery="portfolio" style="background-image: url('https://premnathramanathan.000webhostapp.com/Content/PW_app_arch.jpg');">
+                        <!-- project-description -->
+                        <div class="project-description-wrapper">
+                            <div class="project-description">
+                                <!-- project name -->
+                                <h2 class="project-title">Mobile app 1</h2>
+                                <!-- /project name -->
+                                <span class="see-more">Crowdsourcing app for pet donations</span>
+                            </div>
+                        </div>
+                        <!-- /project-description -->
+                    </a>
+                </div>
+                <!-- /Project Item 2-->
+                <div class="project-item">
+                    <!-- Thumbnail Background-->
+                    <a href="https://premnathramanathan.000webhostapp.com/Content/PW_2.jpg" class="project-thumbnail nivobox" data-lightbox-gallery="portfolio" style="background-image: url('https://premnathramanathan.000webhostapp.com/Content/PW_2.jpg');">
+                        <!-- project-description -->
+                        <div class="project-description-wrapper">
+                            <div class="project-description">
+                                <!-- project name -->
+                                <h2 class="project-title">Mobile app 1</h2>
+                                <!-- /project name -->
+                                <span class="see-more">Crowdsourcing app for pet donations</span>
+                            </div>
+                        </div>
+                        <!-- /project-description -->
+                    </a>
+                </div>
+                <!-- /Project Item-->
+            </div>
+            <!-- /Project List-->
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div>
+            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 549px; right: 4px;"><div class="ps-scrollbar-y" style="top: 0px; height: 121px;"></div></div>
+        </div>
+        <!--/Page: PortFolio-->
+        <!--Page: Contact-->
+        <div class="vcard-body section-page" id="page-contact">
+            <div class="section-contact">
+                <!--title-->
+                <h2 class="section-title">Contact</h2>
+                <!--/title-->
+                <!--Contact Form-->
+                <h4 class="contact-email"><i class="fa fa-paper-plane-o"></i>&nbsp; Send Me a Message</h4>
+                <form id="contact-form" method="post" class="form">
+                    <!--form element-->
+                    <div class="form-element">
+                        <input class="form-control required" id="name" name="name" placeholder="Name" type="text" required/>
+                    </div>
+                    <!--/form element-->
+                    <!--form element-->
+                    <div class="form-element">
+                        <input class="form-control required" id="email" name="email" placeholder="Email" type="email" required/>
+                    </div>
+                    <!--/form element-->
+                    <!--form element-->
+                    <div class="form-element">
+                        <input class="form-control required" id="subject" name="subject" placeholder="Subject" type="text" required/>
+                    </div>
+                    <!--/form element-->
+                    <!--form element-->
+                    <div class="form-element">
+                        <textarea class="form-control required" id="message" name="message" placeholder="Message" type="textarea" rows=5 required></textarea>
+                    </div>
+                    <!--/form element-->
+                    <!--form element-->
+                    <div class="form-element">
+                        <input type="submit" class="btn btn-default form-send" value="Send" />
+                    </div>
+                    <!--/form element-->
+                </form>
+                <!--/Contact Form-->
+                <!--Contact Email-->
+                <div class="contact-info">
+                    <h4 class="contact-email"><i class="fa fa-envelope"></i>&nbsp;   Email</h4>
+                    <p>感谢你的投递</p>
+                </div>
+                <!--/Contact Email-->
+                <!--map-->
+                <h4 class="contact-email"><i class="fa fa-map"></i>&nbsp;   Location</h4>
+                <div class="contact-map">
+                    <iframe src="" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <!--/map-->
+            </div>
+        </div>
+        <!--/Page: Contact-->
+        <!--End of extended view-->
+    </div>
+    <!-- Nivo box Image slider-->
+    <!--<div class="nivo-lightbox-overlay nivo-lightbox-theme-default nivo-lightbox-effect-fade nivo-lightbox-open">
+      <div class="nivo-lightbox-wrap">
+        <div class="nivo-lightbox-content"><div class="nivo-lightbox-image" style="line-height: 618px; height: 618px;"><img src="https://premnathramanathan.000webhostapp.com/Content/PW_2.jpg"></div>
+        </div>
+        <div class="nivo-lightbox-title-wrap"></div>
+          </div>
+      <a href="#" class="nivo-lightbox-nav nivo-lightbox-prev" style="display: inline;">Previous</a>
+      <a href="#" class="nivo-lightbox-nav nivo-lightbox-next" style="display: inline;">Next</a>
+      <a href="#" class="nivo-lightbox-close" title="Close">Close</a>
+
+    </div>-->
+    <!-- End of Nivo box slider-->
+    <!--End of Main Container-->
+</section>
+</body>
+<script>
+
+
+
+    // Check for Window load
+    //$(window).load(function(){
+    //Begin Document Ready
+    $(document).ready(function(){
+        //Menu & pages
+        var linkPage = '';
+        //flag to toggle between home and other pages
+        var homeFlag = 0;
+
+        // Call to slide out Extended view
+        function pageOn(){
+            $('#main-menu').addClass('main-menu-pgactive');
+            $('#section-home').addClass('vcard-body-pgactive');
+            $('.profileActive').removeClass('profileActive');
+            //swithcing to profile pic 1
+            $('#profile-pic2').addClass('profileActive');
+
+            homeFlag = 1;
+        }
+
+        //call to slide in extended view
+        function pageOff(){
+            $('.section-page-active').removeClass('section-page-active');
+            $('#main-menu').removeClass('main-menu-pgactive');
+            $('#section-home').removeClass('vcard-body-pgactive');
+            $('.profileActive').removeClass('profileActive');
+            // switching to profile pic1
+            $('#profile-pic1').addClass('profileActive');
+            homeFlag = 0;
+        }
+        // activate the element /page selected
+        $(".link-page").on('click', function(event){
+            event.preventDefault();
+            $('.menuActive').removeClass('menuActive');
+            $(this).addClass('menuActive');
+            linkPage = $(this).attr('href');
+            $('.section-page-active').removeClass('section-page-active');
+            $(linkPage).addClass('section-page-active');
+            pageOn();
+        });
+
+        // Toggle page screens based on Home flag
+        $(".link-home").on('click', function(event){
+            event.preventDefault();
+            // Home is not active
+            if (homeFlag == 1) {
+                $('.menuActive').removeClass('menuActive');
+                $(this).addClass('menuActive');
+                pageOff();
+            }
+        });
+
+        // Form Validation
+        $("#contact-form").validate({
+            submitHandler: function(form){
+                $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {
+                        "name": $("#contact-form #name").val(),
+                        "email": $("#contact-form #email").val(),
+                        "subject": $("#contact-form #subject").val(),
+                        "message": $("#contact-form #message").val()
+                    },
+                    datatype: "json",
+                    success: function(data) {
+                        if(data=="success"){
+                            alert("Your message was sent successfully");
+                        }
+                        else{
+                            alert("Error sending your message");
+                        }
+                    }
+                })
+            }
+        });
+        // End of form validation
+
+    });
+    //end of document ready
+
+    // });
+    //End of window load
+</script>
+</html>
